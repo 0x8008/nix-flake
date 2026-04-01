@@ -73,10 +73,12 @@
     description = "a";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ kdePackages.kate ];
+    shell = pkgs.zsh;
   };
 
   # Programs & Nix Settings
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
