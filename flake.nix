@@ -18,6 +18,8 @@
         ./modules/system/packages.nix
         ./modules/system/gaming.nix
         ./modules/system/fonts.nix
+        ./modules/system/desktop.nix
+        ./modules/system/audio.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
