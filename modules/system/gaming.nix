@@ -29,6 +29,6 @@
     winetricks
     protontricks
     mcpelauncher-ui-qt
-    (prismlauncher.override { jdks = [ jdk8 jdk21 graalvm-ce ]; })
+    (prismlauncher.override { jdks = [ jdk8 jdk21 graalvmPackages.graalvm-ce ]; })
   ];
 }
