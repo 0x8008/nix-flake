@@ -33,6 +33,10 @@
   programs.zsh = {
     enable = true;
     
+    shellAliases = {
+      rebuild-nix = "cd ~/Documents/nix-flake && sudo nixos-rebuild switch --flake \".#$(hostname)\"";
+    };
+
     initContent = ''
       # 1. Enable Colors, VCS, and Variable Substitution
       autoload -U colors && colors
