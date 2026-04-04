@@ -15,7 +15,6 @@
 
   # networking
   networking.hostName = "ryzen";
-  networking.networkmanager.enable = true;
 
   # locale
   time.timeZone = "Europe/Warsaw";
@@ -33,7 +32,8 @@
   };
 
 
-
+  # zram
+  zramSwap.enable = true;
 
   hardware.cpu.amd.updateMicrocode = true;
 

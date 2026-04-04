@@ -15,11 +15,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/ryzen/configuration.nix
-        ./modules/system/packages.nix
-        ./modules/system/gaming.nix
-        ./modules/system/fonts.nix
-        ./modules/system/desktop.nix
-        ./modules/system/audio.nix
+        ./modules/system
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

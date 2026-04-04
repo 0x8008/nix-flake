@@ -13,5 +13,7 @@
     telegram-desktop
     git
     antigravity-fhs
+    trayscale
+    tailscale-systray
   ];
 }
