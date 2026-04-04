@@ -51,7 +51,7 @@
   users.users.a = {
     isNormalUser = true;
     description = "a";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [ kdePackages.kate ];
     shell = pkgs.zsh;
   };
