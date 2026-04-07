@@ -16,5 +16,6 @@
     antigravity-fhs
     trayscale
     tailscale-systray
+    spotify
   ];
 }
