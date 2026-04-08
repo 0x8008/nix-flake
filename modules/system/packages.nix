@@ -17,5 +17,7 @@
     trayscale
     tailscale-systray
     spotify
+    unrar
+    rar
   ];
 }
