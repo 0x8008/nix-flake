@@ -19,5 +19,6 @@
     spotify
     unrar
     rar
+    lm_sensors
   ];
 }

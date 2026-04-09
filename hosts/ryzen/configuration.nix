@@ -9,8 +9,12 @@
 
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_19.it87 ];
-  boot.kernelModules = [ "it87" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ it87 ];
+  boot.kernelModules = [ "coretemp" "it87" ];
+  boot.kernelParams = [ "acpi_enforce_resources=lax" ];
+  boot.extraModprobeConfig = ''
+    options it87 force_id=0x8623
+  '';
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
   };
