@@ -9,6 +9,8 @@
 
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_19.it87 ];
+  boot.kernelModules = [ "it87" ];
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
   };
