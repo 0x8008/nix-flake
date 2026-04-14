@@ -50,9 +50,6 @@
 
   services.printing.enable = true;
 
-
-  services.flatpak.enable = true;
-
   # User Account
   users.users.a = {
     isNormalUser = true;
@@ -63,7 +60,6 @@
   };
 
   # Programs & Nix Settings
-  programs.firefox.enable = true;
   programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
