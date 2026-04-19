@@ -11,5 +11,6 @@
     unrar
     rar
     lm_sensors
+    peazip
   ];
 }
