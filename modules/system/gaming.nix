@@ -29,6 +29,7 @@
     winetricks
     protontricks
     mcpelauncher-ui-qt
+    heroic
     (prismlauncher.override { jdks = [ jdk8 jdk21 graalvmPackages.graalvm-ce ]; })
   ];
 }
