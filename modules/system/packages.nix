@@ -11,6 +11,7 @@
     unrar
     rar
     lm_sensors
+    onlyoffice-desktopeditors
     (callPackage ../../packages/p7zip-gui { })
   ];
 }
