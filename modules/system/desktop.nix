@@ -16,5 +16,4 @@
     enable32Bit = true;
   };
 
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [ ark ];
 }
