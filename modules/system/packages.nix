@@ -12,6 +12,7 @@
     rar
     lm_sensors
     onlyoffice-desktopeditors
+    claude-code
     (callPackage ../../packages/p7zip-gui { })
   ];
 }
