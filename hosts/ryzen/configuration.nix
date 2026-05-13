@@ -50,6 +50,12 @@
 
   services.printing.enable = true;
 
+  # SSH
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
+  };
+
   # User Account
   users.users.a = {
     isNormalUser = true;
