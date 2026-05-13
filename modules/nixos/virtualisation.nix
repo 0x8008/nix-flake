@@ -14,6 +14,8 @@ let
 
 in
 {
+  boot.kernelParams = [ "amd_iommu=on" "iommu=pt" ];
+
   programs.virt-manager.enable = true;
 
   virtualisation = {

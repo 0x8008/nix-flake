@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox.enable = true;
@@ -9,5 +9,8 @@
     telegram-desktop
     spotify
     qbittorrent
+    onlyoffice-desktopeditors
+    kdePackages.kate
+    (callPackage ../../packages/p7zip-gui/package.nix { })
   ];
 }

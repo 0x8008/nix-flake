@@ -1,11 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
   nixpkgs.overlays = [
     (final: prev: {
       droidcam = prev.droidcam.overrideAttrs (old: {
-        patches = (old.patches or []) ++ [
-          ../../packages/droidcam/fix-tjTransform-heap-corruption.patch
+        patches = (old.patches or [ ]) ++ [
+          ./fix-tjTransform-heap-corruption.patch
         ];
       });
     })

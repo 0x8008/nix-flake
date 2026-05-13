@@ -1,28 +1,30 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nixos/apps.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/desktop.nix
+    ../../modules/nixos/droidcam
+    ../../modules/nixos/fonts.nix
+    ../../modules/nixos/gaming.nix
+    ../../modules/nixos/home-manager.nix
+    ../../modules/nixos/networking.nix
+    ../../modules/nixos/nix-settings.nix
+    ../../modules/nixos/sensors.nix
+    ../../modules/nixos/shell.nix
+    ../../modules/nixos/virtualisation.nix
+  ];
 
-  # limine
-  boot.loader.limine.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = with config.boot.kernelPackages; [ it87 ];
-  boot.kernelModules = [ "coretemp" "it87" "kvm-amd" ];
-  boot.kernelParams = [ "acpi_enforce_resources=lax" "amd_iommu=on" "iommu=pt" ];
-  boot.extraModprobeConfig = ''
-    options it87 force_id=0x8623
-  '';
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 2147483642;
-  };
-
-  # networking
   networking.hostName = "ryzen";
 
-  # locale
+  boot.loader.limine.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  zramSwap.enable = true;
+
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -36,39 +38,21 @@
     LC_TELEPHONE = "pl_PL.UTF-8";
     LC_TIME = "pl_PL.UTF-8";
   };
-
-
-  # zram
-  zramSwap.enable = true;
-
-  hardware.cpu.amd.updateMicrocode = true;
-
-
-
-
   console.keyMap = "pl2";
 
   services.printing.enable = true;
 
-  # SSH
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = true;
   };
 
-  # User Account
   users.users.a = {
     isNormalUser = true;
     description = "a";
     extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" ];
-    packages = with pkgs; [ kdePackages.kate ];
     shell = pkgs.zsh;
   };
-
-  # Programs & Nix Settings
-  programs.zsh.enable = true;
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "26.05";
 }

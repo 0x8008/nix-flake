@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   boot.kernelModules = [ "ntsync" ];
   boot.kernel.sysctl = {
     "kernel.split_lock_mitigate" = 0;
+    # Wine/Star Citizen need a huge mmap count.
+    "vm.max_map_count" = 2147483642;
   };
 
   programs.steam = {
