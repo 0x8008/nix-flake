@@ -10,8 +10,8 @@
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = with config.boot.kernelPackages; [ it87 ];
-  boot.kernelModules = [ "coretemp" "it87" ];
-  boot.kernelParams = [ "acpi_enforce_resources=lax" ];
+  boot.kernelModules = [ "coretemp" "it87" "kvm-amd" ];
+  boot.kernelParams = [ "acpi_enforce_resources=lax" "amd_iommu=on" "iommu=pt" ];
   boot.extraModprobeConfig = ''
     options it87 force_id=0x8623
   '';
@@ -54,7 +54,7 @@
   users.users.a = {
     isNormalUser = true;
     description = "a";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "libvirtd" ];
     packages = with pkgs; [ kdePackages.kate ];
     shell = pkgs.zsh;
   };

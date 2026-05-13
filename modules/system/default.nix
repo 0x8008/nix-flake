@@ -8,5 +8,6 @@
     ./networking.nix
     ./packages.nix
     ./video.nix
+    ./virtualisation.nix
   ];
 }
