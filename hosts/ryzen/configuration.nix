@@ -14,6 +14,7 @@
     ../../modules/nixos/nix-settings.nix
     ../../modules/nixos/sensors.nix
     ../../modules/nixos/shell.nix
+    ../../modules/nixos/ssh.nix
     ../../modules/nixos/virtualisation.nix
   ];
 
@@ -41,11 +42,6 @@
   console.keyMap = "pl2";
 
   services.printing.enable = true;
-
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = true;
-  };
 
   users.users.a = {
     isNormalUser = true;
