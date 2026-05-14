@@ -31,4 +31,20 @@
       bindkey "^[[3~" delete-char
     '';
   };
+
+  # Win10-style taskbar: pinned launchers and their running task collapse
+  # into one slot (separateLaunchers=false), the running task takes the
+  # launcher's exact position (launchInPlace=true), and ordering is
+  # explicit/draggable instead of reshuffling on virtual-desktop changes
+  # (sortingStrategy=0 / "manually"). Applet ID 25 is the
+  # org.kde.plasma.taskmanager widget on the existing panel — if the
+  # panel is rebuilt and the ID shifts, this section name needs to follow.
+  programs.plasma = {
+    enable = true;
+    configFile."plasma-org.kde.plasma.desktop-appletsrc"."Containments/2/Applets/25/Configuration/General" = {
+      separateLaunchers = false;
+      launchInPlace = true;
+      sortingStrategy = 0;
+    };
+  };
 }
