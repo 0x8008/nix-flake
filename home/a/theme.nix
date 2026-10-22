@@ -14,9 +14,9 @@
       package = pkgs.kora-icon-theme;
     };
     cursorTheme = {
-      name = "phinger-cursors-dark";
-      package = pkgs.phinger-cursors;
-      size = 24;
+      name = "mono_black";
+      package = pkgs.posy-cursors-improved;
+      size = 32;
     };
     font = {
       name = "Inter";
@@ -29,9 +29,9 @@
 
   home.pointerCursor = {
     enable = true;
-    name = "phinger-cursors-dark";
-    package = pkgs.phinger-cursors;
-    size = 24;
+    name = "mono_black";
+    package = pkgs.posy-cursors-improved;
+    size = 32;
     gtk.enable = true;
   };
 
@@ -40,8 +40,8 @@
     color-scheme = "prefer-dark";
     gtk-theme = "adw-gtk3-dark";
     icon-theme = "Kora";
-    cursor-theme = "phinger-cursors-dark";
-    cursor-size = 24;
+    cursor-theme = "mono_black";
+    cursor-size = 32;
     font-name = "Inter 10";
     monospace-font-name = "JetBrains Mono 10";
   };

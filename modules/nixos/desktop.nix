@@ -44,8 +44,8 @@
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     QT_QPA_PLATFORM = "wayland;xcb";
-    XCURSOR_THEME = "phinger-cursors-dark";
-    XCURSOR_SIZE = "24";
+    XCURSOR_THEME = "mono_black";
+    XCURSOR_SIZE = "32";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 }

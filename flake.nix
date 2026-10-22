@@ -17,6 +17,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       nix-cachyos-kernel,
@@ -27,6 +28,10 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      overlays.default = final: _prev: {
+        posy-cursors-improved = final.callPackage ./pkgs/posy-cursors-improved.nix { };
+      };
+
       nixosConfigurations.c612 = nixpkgs.lib.nixosSystem {
         inherit system;
 
@@ -34,7 +39,10 @@
           ./hosts/c612
           home-manager.nixosModules.home-manager
           {
-            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+            nixpkgs.overlays = [
+              self.overlays.default
+              nix-cachyos-kernel.overlays.pinned
+            ];
             nixpkgs.config.allowUnfree = true;
 
             home-manager = {
