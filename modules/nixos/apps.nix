@@ -44,6 +44,7 @@
     vesktop
     telegram-desktop
     file-roller
+    omp
 
     # Archive command-line tools.
     p7zip
