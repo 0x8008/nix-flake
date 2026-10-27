@@ -73,11 +73,11 @@ in
       <keyboard>
         <default />
         <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
-        <keybind key="W-d"><action name="Execute" command="fuzzel" /></keybind>
+        <keybind key="W-d"><action name="Execute" command="launcher" /></keybind>
         <keybind key="W-e"><action name="Execute" command="thunar" /></keybind>
         <!-- Tap left Super to open the launcher. onRelease keeps it from
              firing when Super is part of another keybinding. -->
-        <keybind key="Super_L" onRelease="yes"><action name="Execute" command="fuzzel" /></keybind>
+        <keybind key="Super_L" onRelease="yes"><action name="Execute" command="launcher" /></keybind>
         <keybind key="W-q"><action name="Close" /></keybind>
         <keybind key="W-f"><action name="ToggleFullscreen" /></keybind>
         <keybind key="W-m"><action name="ToggleMaximize" /></keybind>
@@ -134,7 +134,7 @@ in
     <openbox_menu>
       <menu id="root-menu">
         <item label="Terminal"><action name="Execute" command="foot" /></item>
-        <item label="Launcher"><action name="Execute" command="fuzzel" /></item>
+        <item label="Launcher"><action name="Execute" command="launcher" /></item>
         <separator />
         <item label="Firefox"><action name="Execute" command="firefox" /></item>
         <item label="Files"><action name="Execute" command="thunar" /></item>
@@ -231,7 +231,7 @@ in
       "custom/launcher": {
         "format": "≡",
         "tooltip": false,
-        "on-click": "fuzzel"
+        "on-click": "launcher"
       },
 
       "ext/workspaces": {

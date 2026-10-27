@@ -3,6 +3,7 @@
 {
   imports = [
     ./labwc.nix
+    ./launcher.nix
     ./shell.nix
     ./theme.nix
   ];
