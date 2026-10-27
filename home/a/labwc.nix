@@ -352,7 +352,7 @@ in
 
   xdg.configFile."foot/foot.ini".text = ''
     [main]
-    font=JetBrains Mono:size=10
+    font=JetBrains Mono:size=12
     pad=8x8
 
     [colors-dark]
