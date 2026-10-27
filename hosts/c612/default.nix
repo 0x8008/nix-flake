@@ -31,6 +31,11 @@
   };
   console.keyMap = "pl2";
 
+  # XKB layout for the graphical session. wlroots does not read the vconsole
+  # keymap, so labwc also exports XKB_DEFAULT_LAYOUT (home/a/labwc.nix).
+  # "pl" is the programmer's layout: QWERTY with Polish letters on AltGr.
+  services.xserver.xkb.layout = "pl";
+
   users.users.a = {
     isNormalUser = true;
     description = "a";

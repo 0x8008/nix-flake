@@ -127,6 +127,7 @@ in
     XDG_CURRENT_DESKTOP=labwc
     XDG_SESSION_DESKTOP=labwc
     XDG_SESSION_TYPE=wayland
+    XKB_DEFAULT_LAYOUT=pl
   '';
 
   xdg.configFile."labwc/autostart" = {
