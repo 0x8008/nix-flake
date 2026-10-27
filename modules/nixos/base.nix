@@ -36,6 +36,7 @@
     htop
     lm_sensors
     pciutils
+    tmux
     usbutils
     wget
 
