@@ -35,10 +35,25 @@
   environment.systemPackages = with pkgs; [
     curl
     git
+    gh
     htop
     lm_sensors
     pciutils
     usbutils
     wget
+
+    # gh authenticates `git push` to GitHub. After `gh auth login`, run
+    # `gh auth setup-git` so git uses gh as its credential helper.
+    # nixsync stages every file and refreshes flake.lock. Nix reads a git
+    # flake from the tracked files of the working tree, so new files must be
+    # staged before nixos-rebuild can see them. It works in the given
+    # directory, or /etc/nixos when no argument is given.
+    (writeShellScriptBin "nixsync" ''
+      cd -- "''${1:-/etc/nixos}"
+      git add -A
+      nix flake update
+      git add flake.lock
+      git status --short --branch
+    '')
   ];
 }
