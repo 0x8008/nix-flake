@@ -34,8 +34,8 @@ in
     <labwc_config>
       <core>
         <gap>0</gap>
-        <!-- VRR for smoother frame pacing; tearing only when a client asks. -->
-        <adaptiveSync>yes</adaptiveSync>
+        <!-- Tearing is allowed when a client asks; VRR is off. -->
+        <adaptiveSync>no</adaptiveSync>
         <allowTearing>yes</allowTearing>
       </core>
 
