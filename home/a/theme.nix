@@ -10,8 +10,8 @@
       package = pkgs.adw-gtk3;
     };
     iconTheme = {
-      name = "Kora";
-      package = pkgs.kora-icon-theme;
+      name = "WhiteSur-dark";
+      package = pkgs.whitesur-icon-theme;
     };
     cursorTheme = {
       name = "mono_black";
@@ -39,7 +39,7 @@
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
     gtk-theme = "adw-gtk3-dark";
-    icon-theme = "Kora";
+    icon-theme = "WhiteSur-dark";
     cursor-theme = "mono_black";
     cursor-size = 32;
     font-name = "Inter 10";

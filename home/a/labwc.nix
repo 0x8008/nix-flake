@@ -240,7 +240,7 @@ in
       "wlr/taskbar": {
         "format": "{icon} {title:.30}",
         "icon-size": 22,
-        "icon-theme": "Kora",
+        "icon-theme": "WhiteSur-dark",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
