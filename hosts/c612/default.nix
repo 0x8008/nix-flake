@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
     ../../modules/nixos/audio.nix
     ../../modules/nixos/apps.nix
     ../../modules/nixos/gaming.nix
+    ../../modules/nixos/shell.nix
   ];
 
   networking.hostName = "c612";
@@ -33,6 +34,7 @@
   users.users.a = {
     isNormalUser = true;
     description = "a";
+    shell = pkgs.zsh;
     extraGroups = [
       "audio"
       "input"
