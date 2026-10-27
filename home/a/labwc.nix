@@ -75,6 +75,9 @@ in
         <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
         <keybind key="W-d"><action name="Execute" command="fuzzel" /></keybind>
         <keybind key="W-e"><action name="Execute" command="thunar" /></keybind>
+        <!-- Tap left Super to open the launcher. onRelease keeps it from
+             firing when Super is part of another keybinding. -->
+        <keybind key="Super_L" onRelease="yes"><action name="Execute" command="fuzzel" /></keybind>
         <keybind key="W-q"><action name="Close" /></keybind>
         <keybind key="W-f"><action name="ToggleFullscreen" /></keybind>
         <keybind key="W-m"><action name="ToggleMaximize" /></keybind>
