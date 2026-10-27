@@ -73,6 +73,10 @@ in
         <keybind key="W-m"><action name="ToggleMaximize" /></keybind>
         <keybind key="W-Left"><action name="SnapToEdge" direction="left" combine="yes" /></keybind>
         <keybind key="W-Right"><action name="SnapToEdge" direction="right" combine="yes" /></keybind>
+        <keybind key="W-C-Left"><action name="ResizeRelative" left="-10" /></keybind>
+        <keybind key="W-C-Right"><action name="ResizeRelative" right="10" /></keybind>
+        <keybind key="W-C-Up"><action name="ResizeRelative" top="-10" /></keybind>
+        <keybind key="W-C-Down"><action name="ResizeRelative" bottom="10" /></keybind>
         <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
         <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
         <keybind key="W-3"><action name="GoToDesktop" to="3" /></keybind>
@@ -93,6 +97,8 @@ in
       </keyboard>
 
       <mouse>
+        <!-- <default /> pulls in Alt+Left-drag to move and Alt+Right-drag to
+             resize any window. -->
         <default />
         <context name="Root">
           <mousebind button="Right" action="Press">
