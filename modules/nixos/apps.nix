@@ -44,6 +44,9 @@
     vesktop
     telegram-desktop
     file-roller
+    thunar
+    thunar-archive-plugin
+    thunar-volman
     omp
     opencode
 

@@ -16,6 +16,7 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
+      "inode/directory" = "thunar.desktop";
       "application/zip" = "org.gnome.FileRoller.desktop";
       "application/x-7z-compressed" = "org.gnome.FileRoller.desktop";
       "application/vnd.rar" = "org.gnome.FileRoller.desktop";

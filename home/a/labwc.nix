@@ -67,6 +67,7 @@ in
         <default />
         <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
         <keybind key="W-d"><action name="Execute" command="fuzzel" /></keybind>
+        <keybind key="W-e"><action name="Execute" command="thunar" /></keybind>
         <keybind key="W-q"><action name="Close" /></keybind>
         <keybind key="W-f"><action name="ToggleFullscreen" /></keybind>
         <keybind key="W-m"><action name="ToggleMaximize" /></keybind>
@@ -110,6 +111,7 @@ in
         <item label="Launcher"><action name="Execute" command="fuzzel" /></item>
         <separator />
         <item label="Firefox"><action name="Execute" command="firefox" /></item>
+        <item label="Files"><action name="Execute" command="thunar" /></item>
         <item label="Archive Manager"><action name="Execute" command="file-roller" /></item>
         <item label="Telegram"><action name="Execute" command="telegram-desktop" /></item>
         <item label="Vesktop"><action name="Execute" command="vesktop" /></item>

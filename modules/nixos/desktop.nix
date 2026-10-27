@@ -25,6 +25,15 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+  # Trash, removable media and remote locations for Thunar.
+  services.gvfs.enable = true;
+
+  # Firefox asks for a portal file picker, and GTK applications use it too.
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   fonts = {
     packages = with pkgs; [
       inter
