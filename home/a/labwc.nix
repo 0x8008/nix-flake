@@ -63,6 +63,13 @@ in
         </names>
       </desktops>
 
+      <resize>
+        <!-- The visible border is thin, so extend the invisible grab zone
+             just outside the window and make the corner targets generous. -->
+        <minimumArea>12</minimumArea>
+        <cornerRange>18</cornerRange>
+      </resize>
+
       <keyboard>
         <default />
         <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
@@ -97,9 +104,19 @@ in
       </keyboard>
 
       <mouse>
-        <!-- <default /> pulls in Alt+Left-drag to move and Alt+Right-drag to
-             resize any window. -->
+        <!-- Plain left-drag on the border resizes (see the Border context
+             below); Super+Left-drag moves and Super+Right-drag resizes from
+             anywhere in the window. -->
         <default />
+        <context name="Border">
+          <mousebind button="Left" action="Press">
+            <action name="Focus" />
+            <action name="Raise" />
+          </mousebind>
+          <mousebind button="Left" action="Drag">
+            <action name="Resize" />
+          </mousebind>
+        </context>
         <context name="Root">
           <mousebind button="Right" action="Press">
             <action name="ShowMenu" menu="root-menu" />
@@ -157,7 +174,7 @@ in
 
   # labwc reads Openbox 3 themes from $XDG_DATA_HOME/themes.
   xdg.dataFile."themes/mono/openbox-3/themerc".text = ''
-    border.width: 1
+    border.width: 2
 
     window.titlebar.padding.width: 6
     window.titlebar.padding.height: 6
