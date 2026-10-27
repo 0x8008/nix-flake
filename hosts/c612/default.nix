@@ -42,6 +42,7 @@
     shell = pkgs.zsh;
     extraGroups = [
       "audio"
+      "gamemode"
       "input"
       "networkmanager"
       "render"
