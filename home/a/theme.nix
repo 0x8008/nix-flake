@@ -27,13 +27,6 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  # Posy's theme only ships the classic X11 cursor names. Adwaita is the
-  # declared fallback in its index.theme, but it was not installed, so labwc
-  # used wlroots' built-in cursors and Firefox had no grab/grabbing hand.
-  # With Adwaita present, Xcursor inherits the missing shapes while Posy still
-  # provides the arrow and resize cursors.
-  home.packages = [ pkgs.adwaita-icon-theme ];
-
   home.pointerCursor = {
     enable = true;
     name = "mono_black";
