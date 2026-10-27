@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   # Generated with toINI so the color keys stay exact.
@@ -130,11 +130,21 @@ in
   xdg.configFile."labwc/autostart" = {
     executable = true;
     text = ''
+      ${pkgs.kanshi}/bin/kanshi &
       waybar &
       swaybg -c '#0b0b0b' &
       mako &
     '';
   };
+
+  # The panel is 2560x1440 at up to 240 Hz, but its EDID marks 1440p60 as the
+  # preferred mode, so wlroots starts at 60 Hz. kanshi pins 240 Hz and re-applies
+  # it after a VT switch, which resets the mode.
+  xdg.configFile."kanshi/config".text = ''
+    profile default {
+      output "DP-1" mode 2560x1440@240Hz position 0,0
+    }
+  '';
 
   # labwc reads Openbox 3 themes from $XDG_DATA_HOME/themes.
   xdg.dataFile."themes/mono/openbox-3/themerc".text = ''

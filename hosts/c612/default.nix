@@ -13,6 +13,7 @@
 
   networking.hostName = "c612";
   networking.networkmanager.enable = true;
+  services.openssh.enable = true;
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";

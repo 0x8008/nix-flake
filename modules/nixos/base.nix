@@ -11,14 +11,16 @@
       "root"
       "@wheel"
     ];
-    # The lantian cache serves the CachyOS kernel builds.
+    # The lantian cache serves the CachyOS kernel builds. The cache moved to
+    # cache.lantian.pub with a new signing key after the October 2026 incident
+    # (xddxdd/nix-cachyos-kernel#110).
     substituters = [
       "https://cache.nixos.org"
-      "https://attic.xuyh0120.win/lantian"
+      "https://cache.lantian.pub/lantian"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
     ];
   };
 

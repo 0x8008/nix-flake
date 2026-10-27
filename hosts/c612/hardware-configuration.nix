@@ -1,8 +1,6 @@
 # Host-specific hardware configuration.
 #
-# The file system labels below are placeholders. After the installation,
-# replace them with the UUIDs from `blkid`. Example:
-#   fileSystems."/".device = "/dev/disk/by-uuid/<UUID>";
+# The file systems are addressed by UUID. Get them from `blkid`.
 {
   config,
   lib,
@@ -27,12 +25,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
+    device = "/dev/disk/by-uuid/e2bad9f9-6cfa-48c7-8873-61585d0be036";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/BOOT";
+    device = "/dev/disk/by-uuid/C298-7FE0";
     fsType = "vfat";
     options = [
       "fmask=0077"
