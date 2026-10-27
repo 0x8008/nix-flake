@@ -174,7 +174,7 @@ in
 
   # labwc reads Openbox 3 themes from $XDG_DATA_HOME/themes.
   xdg.dataFile."themes/mono/openbox-3/themerc".text = ''
-    border.width: 2
+    border.width: 1
 
     window.titlebar.padding.width: 6
     window.titlebar.padding.height: 6
