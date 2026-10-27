@@ -38,5 +38,18 @@
     pciutils
     usbutils
     wget
+
+    (writeShellScriptBin "nixsync" ''
+      set -eu
+      cd -- "''${1:-/etc/nixos}"
+      if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        echo "nixsync: staging working tree changes"
+      fi
+      git add -A
+      echo "nixsync: updating nixpkgs and home-manager"
+      nix flake update nixpkgs home-manager
+      git add flake.lock
+      git status --short --branch
+    '')
   ];
 }
