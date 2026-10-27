@@ -238,7 +238,7 @@ in
       },
 
       "wlr/taskbar": {
-        "format": "{icon} {title}",
+        "format": "{icon} {title:.30}",
         "icon-size": 22,
         "icon-theme": "Kora",
         "tooltip-format": "{title}",
