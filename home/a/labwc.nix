@@ -167,8 +167,8 @@ in
     window.inactive.label.text.color: #6a6a6a
     window.label.text.justify: center
 
-    window.button.width: 22
-    window.button.height: 22
+    window.button.width: 24
+    window.button.height: 24
     window.button.hover.bg.color: #ffffff18
     window.active.button.unpressed.image.color: #c8c8c8
     window.inactive.button.unpressed.image.color: #5a5a5a
@@ -214,8 +214,8 @@ in
       },
 
       "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
+        "format": "{icon} {name}",
+        "icon-size": 22,
         "icon-theme": "Kora",
         "tooltip-format": "{title}",
         "on-click": "activate",
@@ -297,7 +297,7 @@ in
     }
 
     #taskbar button {
-      padding: 0 4px;
+      padding: 0 6px;
       background: transparent;
       border-bottom: 1px solid transparent;
       border-radius: 0;
