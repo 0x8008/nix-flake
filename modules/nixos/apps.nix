@@ -45,6 +45,7 @@
     telegram-desktop
     file-roller
     omp
+    opencode
 
     # Archive command-line tools.
     p7zip
