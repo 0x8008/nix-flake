@@ -94,7 +94,7 @@ in
         <keybind key="W-S-4"><action name="SendToDesktop" to="4" follow="yes" /></keybind>
         <keybind key="W-S-r"><action name="Reconfigure" /></keybind>
         <keybind key="W-S-l"><action name="Execute" command="lock-screen" /></keybind>
-        <keybind key="Print"><action name="Execute" command="screenshot" /></keybind>
+        <keybind key="C-Right"><action name="Execute" command="screenshot" /></keybind>
         <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+" /></keybind>
         <keybind key="XF86AudioLowerVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-" /></keybind>
         <keybind key="XF86AudioMute"><action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /></keybind>
